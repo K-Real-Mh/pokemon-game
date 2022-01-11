@@ -1,6 +1,6 @@
 import s from './Layout.module.css';
 
-function Layout({title, descr, urlBg, colorBg}) {
+function Layout({title, urlBg, colorBg, colorTitle, children}) {
     const backgroundStyle = `
     ${colorBg ? colorBg : ''}
     ${urlBg ? `url(${urlBg})` : ''}
@@ -12,17 +12,15 @@ function Layout({title, descr, urlBg, colorBg}) {
                 <article>
                     {title && (
                         <div className={s.title}>
-                            <h3>
+                            <h3 style={colorTitle && {color: colorTitle}}>
                                 {title}
                             </h3>
                             <span className={s.separator}/>
                         </div>
                     )}
-                    {descr && (
+                    {children && (
                         <div className={[s.desc, s.full].join(' ')}>
-                            <p>
-                                {descr}
-                            </p>
+                            {children}
                         </div>
                     )}
                 </article>
