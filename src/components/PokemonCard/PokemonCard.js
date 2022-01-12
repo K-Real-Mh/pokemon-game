@@ -1,28 +1,29 @@
-import s from './PokemonCard.module.css';
-import cardBack from '../../assets/card-back-side.jpg';
 import {useState} from "react";
+import cn from 'classnames';
+import cardBack from '../../assets/card-back-side.jpg';
+import s from './PokemonCard.module.css';
 
 function PokemonCard({type, values, img, name, id}) {
     const [active, setActive] = useState(false);
 
     const handleClick = () => {
-      setActive(prevState => !prevState);
+        setActive(prevState => !prevState);
     }
 
     return (
         <div className={s.root}>
-            <div className={`${s.pokemonCard} ${active ? s.active : ''}`} onClick={handleClick}>
+            <div className={cn(s.pokemonCard, {[s.active]: active})} onClick={handleClick}>
                 <div className={s.cardFront}>
-                    <div className={`${s.wrap} ${s.front}`}>
-                        <div className={`${s.pokemon} ${s[type]}`}>
+                    <div className={cn(s.wrap, s.front)}>
+                        <div className={cn(s.pokemon, s[type])}>
                             <div className={s.values}>
-                                <div className={`${s.count} ${s.top}`}>{values.top}</div>
-                                <div className={`${s.count} ${s.right}`}>{values.right}</div>
-                                <div className={`${s.count} ${s.bottom}`}>{values.bottom}</div>
-                                <div className={`${s.count} ${s.left}`}>{values.left}</div>
+                                <div className={cn(s.count, s.top)}>{values.top}</div>
+                                <div className={cn(s.count, s.right)}>{values.right}</div>
+                                <div className={cn(s.count, s.bottom)}>{values.bottom}</div>
+                                <div className={cn(s.count, s.left)}>{values.left}</div>
                             </div>
                             <div className={s.imgContainer}>
-                                <img src={img} alt={name} />
+                                <img src={img} alt={name}/>
                             </div>
                             <div className={s.info}>
                                 <span className={s.number}>#{id}</span>
@@ -34,8 +35,8 @@ function PokemonCard({type, values, img, name, id}) {
                 </div>
 
                 <div className={s.cardBack}>
-                    <div className={`${s.wrap} ${s.back}`}>
-                        <img src={cardBack} alt="Сard Backed" />
+                    <div className={cn(s.wrap, s.back)}>
+                        <img src={cardBack} alt="Сard Backed"/>
                     </div>
                 </div>
 
