@@ -11,6 +11,8 @@
     transition: all ease-in-out .25s;
     cursor: pointer;
     box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
 }
 
 .button,
