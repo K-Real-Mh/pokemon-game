@@ -1,9 +1,9 @@
 import cn from "classnames";
 import s from './NavBar.module.css';
 
-function NavBar({onClick, active}) {
+function NavBar({onClick, bgActive = false, active}) {
     return (
-        <nav className={s.root}>
+        <nav id={s.navbar} className={cn(s.root, {[s.bgActive]: bgActive})}>
             <div className={s.navWrapper}>
                 <p className={s.brand}>
                     LOGO
