@@ -3,6 +3,7 @@ import Layout from "../../components/Layout/Layout";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 import Footer from "../../components/Footer/Footer";
 import bg from "../../assets/bg1.jpg";
+import MenuHeader from "../../components/MenuHeader/MenuHeader";
 
 const POKEMONS = [
     {
@@ -142,6 +143,7 @@ const POKEMONS = [
 function HomePage({onChangePage}) {
     return (
         <>
+            <MenuHeader/>
             <Header title="Pokemon game" descr="This is simple triple triad card game" onClickButton={onChangePage}/>
             <Layout id="rules" title="Rules" urlBg={bg}>
                 <p>In the game two players face off against one another, one side playing as "blue", the other as "red"
