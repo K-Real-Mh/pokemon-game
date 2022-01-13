@@ -3,7 +3,7 @@ import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 
 function MenuHeader() {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(null);
 
     const handleToggleMenu = () => {
         setOpen(prevState => !prevState);
