@@ -8,9 +8,9 @@ function NavBar({onClick, bgActive = false, active}) {
                 <p className={s.brand}>
                     LOGO
                 </p>
-                <a className={cn(s.menuButton, {[s.active]: active})} onClick={onClick}>
+                <div className={cn(s.menuButton, {[s.active]: active})} onClick={onClick}>
                     <span/>
-                </a>
+                </div>
             </div>
         </nav>
     );
