@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import s from './Layout.module.css';
 
 function Layout({title, urlBg, colorBg, colorTitle, children}) {
@@ -19,7 +20,7 @@ function Layout({title, urlBg, colorBg, colorTitle, children}) {
                         </div>
                     )}
                     {children && (
-                        <div className={[s.desc, s.full].join(' ')}>
+                        <div className={cn(s.desc, s.full)}>
                             {children}
                         </div>
                     )}
