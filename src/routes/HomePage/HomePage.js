@@ -1,9 +1,8 @@
 import Header from "../../components/Header/Header";
 import Layout from "../../components/Layout/Layout";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
-import Footer from "../../components/Footer/Footer";
 import bg from "../../assets/bg1.jpg";
-import MenuHeader from "../../components/MenuHeader/MenuHeader";
+import s from "./HomePage.module.css";
 
 const POKEMONS = [
     {
@@ -140,11 +139,10 @@ const POKEMONS = [
     }
 ]
 
-function HomePage({onChangePage}) {
+function HomePage() {
     return (
         <>
-            <MenuHeader/>
-            <Header title="Pokemon game" descr="This is simple triple triad card game" onClickButton={onChangePage}/>
+            <Header title="Pokemon game" descr="This is simple triple triad card game"/>
             <Layout id="rules" title="Rules" urlBg={bg}>
                 <p>In the game two players face off against one another, one side playing as "blue", the other as "red"
                     on a 3x3 grid.</p>
@@ -152,7 +150,7 @@ function HomePage({onChangePage}) {
                     into the player's own color of red or blue.</p>
             </Layout>
             <Layout id="cards" title="Cards" colorBg="#202736" colorTitle="#FEFEFE">
-                <div className="flex">
+                <div className={s.flex}>
                     {POKEMONS.map(pokemon => (
                         <PokemonCard key={pokemon.id} name={pokemon.name} id={pokemon.id} type={pokemon.type}
                                      img={pokemon.img} values={pokemon.values}/>
@@ -167,7 +165,6 @@ function HomePage({onChangePage}) {
                     card will be captured and turned into the opponent's color. If the player's rank is higher, the
                     opponent's card will be captured and changed into the player's color instead.</p>
             </Layout>
-            <Footer/>
         </>
     );
 }
