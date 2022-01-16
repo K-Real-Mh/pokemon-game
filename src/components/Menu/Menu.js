@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import Link from "react-router-dom/es/Link";
+import {Link} from "react-router-dom";
 import s from './Menu.module.css';
 
 const MENU = [
@@ -34,8 +34,8 @@ function Menu({active, onClick}) {
             <div className={s.menuItems}>
                 <ul>
                     {
-                        MENU.map(item => (
-                            <li>
+                        MENU.map((item, idx) => (
+                            <li key={idx}>
                                 <Link to={item.to} onClick={onClick}>{item.title}</Link>
                             </li>
                         ))

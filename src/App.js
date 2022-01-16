@@ -1,7 +1,4 @@
-import Switch from "react-router-dom/es/Switch";
-import Route from "react-router-dom/es/Route";
-import {useRouteMatch} from "react-router-dom";
-import Redirect from "react-router-dom/es/Redirect";
+import {Redirect, Route, Switch, useRouteMatch} from "react-router-dom";
 import cn from "classnames";
 import Footer from "./components/Footer/Footer";
 import MenuHeader from "./components/MenuHeader/MenuHeader";
