@@ -26,6 +26,9 @@ function GamePage() {
                 const pokemon = {...item[1]};
                 if (pokemon.id === id) {
                     pokemon.active = true;
+                    database.ref('pokemons/'+ item[0]).set({
+                        ...pokemon
+                    });
                 }
 
                 acc[item[0]] = pokemon;
